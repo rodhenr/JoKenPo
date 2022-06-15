@@ -1,0 +1,62 @@
+.result-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  gap: 1.5rem;
+}
+
+.result-choices {
+  display: flex;
+  gap: 1rem;
+
+  svg {
+    height: 45px;
+  }
+}
+
+.choice-player {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  p {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 0;
+  }
+}
+
+.choice-computer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  p {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 0;
+  }
+}
+
+.result-info {
+  p {
+    color: #fff;
+    font-size: 3rem;
+    margin: 0;
+  }
+}
+
+.result-play {
+  button {
+    border: none;
+    border-radius: 8px;
+    color: #1c3352;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 1rem;
+    width: 250px;
+  }
+}

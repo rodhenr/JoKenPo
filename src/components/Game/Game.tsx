@@ -1,21 +1,22 @@
-import {
-  faHandBackFist,
-  faHandScissors,
-  faHand,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Paper from "./Paper";
+import Rock from "./Rock";
+import Scissors from "./Scissors";
+import Result from "./Result";
 
-import { useDispatch } from "react-redux";
-import { increment } from "../store/slices/scoreSlice";
+import { RootState } from "../../store/store";
+import { useDispatch, useSelector } from "react-redux";
+import { increment } from "../../store/slices/scoreSlice";
 import {
   changeSituation,
   changePlayerChoice,
   changeComputerChoice,
-} from "../store/slices/gameSlice";
+  showResults,
+} from "../../store/slices/gameSlice";
 
-import "../styles/Game.scss";
+import "../../styles/Game.scss";
 
 function Game() {
+  const gameStore = useSelector((state: RootState) => state.game);
   const dispatch = useDispatch();
 
   const play = (playerChoice: string): void => {
@@ -47,42 +48,42 @@ function Game() {
     }
     dispatch(changePlayerChoice(playerChoice));
     dispatch(changeComputerChoice(computerChoice));
+    dispatch(showResults(true));
   };
 
   return (
     <div className="game-container">
-      <div className="choice-container">
-        <div className="rock-paper">
-          <div
-            className="choice choice-rock"
-            onClick={() => {
-              play("rock");
-            }}
-          >
-            <FontAwesomeIcon icon={faHandBackFist} />
+      {gameStore.showResult ? (
+        <Result />
+      ) : (
+        <div className="choice-container">
+          <div className="rock-paper">
+            <div
+              onClick={() => {
+                play("rock");
+              }}
+            >
+              <Rock />
+            </div>
+            <div
+              onClick={() => {
+                play("paper");
+              }}
+            >
+              <Paper />
+            </div>
           </div>
           <div
-            className="choice choice-paper"
             onClick={() => {
-              play("paper");
+              play("scissors");
             }}
           >
-            <FontAwesomeIcon icon={faHand} />
+            <Scissors />
           </div>
         </div>
-        <div
-          className="choice choice-scissors"
-          onClick={() => {
-            play("scissors");
-          }}
-        >
-          <FontAwesomeIcon icon={faHandScissors} />
-        </div>
-      </div>
+      )}
     </div>
   );
 }
 
 export default Game;
-
-// onClick={() => dispatch(increment())}

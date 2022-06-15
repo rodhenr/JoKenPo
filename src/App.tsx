@@ -1,4 +1,4 @@
-import Game from "./components/Game";
+import Game from "./components/Game/Game";
 import Rules from "./components/Rules";
 import Score from "./components/Score";
 import "./App.css";

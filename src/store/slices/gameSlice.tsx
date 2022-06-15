@@ -4,12 +4,14 @@ export interface gameState {
   situation: string;
   playerChoice: string;
   computerChoice: string;
+  showResult: boolean;
 }
 
 const initialState: gameState = {
   situation: "",
   playerChoice: "",
   computerChoice: "",
+  showResult: false,
 };
 
 export const gameSlice = createSlice({
@@ -25,10 +27,14 @@ export const gameSlice = createSlice({
     changeComputerChoice: (state, action: PayloadAction<string>) => {
       state.computerChoice = action.payload;
     },
+    showResults: (state, action: PayloadAction<boolean>) => {
+      state.showResult = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { changeSituation, changePlayerChoice, changeComputerChoice } = gameSlice.actions;
+export const { changeSituation, changePlayerChoice, changeComputerChoice, showResults } =
+  gameSlice.actions;
 
 export default gameSlice.reducer;
