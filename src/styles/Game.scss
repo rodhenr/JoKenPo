@@ -1,0 +1,51 @@
+.game-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.choice-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  svg {
+    color: #1c3352;
+    height: 45px;
+    width: 45px;
+  }
+}
+
+.rock-paper {
+  display: flex;
+  gap: 2rem;
+}
+
+.choice {
+  cursor: pointer;
+
+  svg {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 2rem;
+  }
+}
+
+.choice-rock {
+  svg {
+    border: 12px solid #5168f2;
+  }
+}
+
+.choice-paper {
+  svg {
+    border: 12px solid #efa214;
+  }
+}
+
+.choice-scissors {
+  svg {
+    border: 12px solid #d73753;
+  }
+}

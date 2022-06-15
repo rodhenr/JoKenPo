@@ -1,0 +1,14 @@
+.rules-container {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+  margin-top: 4rem;
+
+  p {
+    border: 3px solid #5f708c;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 0.7rem 2rem;
+  }
+}
