@@ -2,7 +2,17 @@
   display: flex;
   justify-content: center;
   height: 45vh;
-  margin-top: 6rem;
+  margin-top: 5rem;
+
+  @media (min-width: 500px) {
+    margin: 5rem auto 0;
+    width: 400px;
+  }
+
+  @media (min-width: 1000px) {
+    height: 50vh;
+    width: 650px;
+  }
 }
 
 .choice-container {
@@ -17,6 +27,15 @@
     color: #1c3352;
     height: 45px;
     width: 45px;
+  }
+
+  @media (min-width: 1000px) {
+    gap: 4rem;
+
+    svg {
+      height: 70px;
+      width: 70px;
+    }
   }
 }
 

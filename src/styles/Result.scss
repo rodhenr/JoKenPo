@@ -18,6 +18,21 @@
     height: 45px;
     width: 45px;
   }
+
+  @media (min-width: 500px) {
+    margin: 0 auto;
+    width: 400px;
+  }
+
+  @media (min-width: 1000px) {
+    align-items: center;
+    width: 650px;
+
+    svg {
+      height: 70px;
+      width: 70px;
+    }
+  }
 }
 
 .choice-player {
@@ -55,6 +70,14 @@
     font-weight: 600;
     margin: 0;
   }
+
+  @media (min-width: 1000px) {
+    margin: 0;
+
+    p {
+      font-size: 2.2rem;
+    }
+  }
 }
 
 .result-info.winner {
@@ -73,4 +96,12 @@
     padding: 1rem;
     width: 220px;
   }
+}
+
+.play-again {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0 1rem;
 }

@@ -1,9 +1,18 @@
 .rounds-container {
   border: 2px solid #5f708c;
   height: 150px;
-  margin: 3rem 1rem;
+  margin: 2rem 1rem;
   overflow-x: hidden;
   overflow-y: scroll;
+
+  @media (min-width: 500px) {
+    margin: 0 auto 0;
+    width: 450px;
+  }
+
+  @media(min-width: 1000px){
+    width: 550px;
+  }
 }
 
 .rounds {

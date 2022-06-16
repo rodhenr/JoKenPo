@@ -5,11 +5,20 @@
   display: flex;
   font-family: "Poppins", sans-serif;
   justify-content: space-between;
-  margin: 30px 5%;
+  margin: 30px 1rem;
   padding: 0.6rem 1rem;
 
   p {
     color: #fff;
+  }
+
+  @media(min-width: 500px){
+    margin: 30px auto;
+    width: 400px;
+  }
+
+  @media(min-width: 1000px){
+    width: 650px;
   }
 }
 

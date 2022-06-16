@@ -1,3 +1,5 @@
+import { useLayoutEffect, useState } from "react";
+
 import Paper from "./Paper";
 import Rock from "./Rock";
 import Scissors from "./Scissors";
@@ -9,10 +11,21 @@ import { showResults } from "../../store/slices/gameSlice";
 import "../../styles/Result.scss";
 
 function Result() {
+  const [windowSize, setWindowSize] = useState(0);
   const gameResult = useSelector((state: RootState) => state.game);
   const roundInfo = gameResult.roundInfo;
   const lastRound = roundInfo[roundInfo.length - 1];
   const dispatch = useDispatch();
+
+  useLayoutEffect(() => {
+    function handleResize() {
+      setWindowSize(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const getComponent = (name: string) => {
     switch (name) {
@@ -51,23 +64,43 @@ function Result() {
           {getComponent(lastRound.playerChoice)}
           <p>VOCÊ</p>
         </div>
+        {windowSize > 999 && (
+          <div className="play-again">
+            <div
+              className={
+                lastRound.situation === "vitoria"
+                  ? "result-info winner"
+                  : "result-info"
+              }
+            >
+              <p>{situationResult()}</p>
+            </div>
+            <div className="result-play">
+              <button onClick={() => handleNewGame()}>JOGAR NOVAMENTE</button>
+            </div>
+          </div>
+        )}
         <div className="choice-computer">
           {getComponent(lastRound.computerChoice)}
           <p>COMPUTADOR</p>
         </div>
       </div>
-      <div
-        className={
-          lastRound.situation === "vitoria"
-            ? "result-info winner"
-            : "result-info"
-        }
-      >
-        <p>{situationResult()}</p>
-      </div>
-      <div className="result-play">
-        <button onClick={() => handleNewGame()}>JOGAR NOVAMENTE</button>
-      </div>
+      {windowSize <= 999 && (
+        <div className="play-again">
+          <div
+            className={
+              lastRound.situation === "vitoria"
+                ? "result-info winner"
+                : "result-info"
+            }
+          >
+            <p>{situationResult()}</p>
+          </div>
+          <div className="result-play">
+            <button onClick={() => handleNewGame()}>JOGAR NOVAMENTE</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
