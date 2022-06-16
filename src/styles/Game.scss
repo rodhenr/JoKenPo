@@ -1,7 +1,7 @@
 .game-container {
   display: flex;
   justify-content: center;
-  height: 40vh;
+  height: 45vh;
   margin-top: 4rem;
 }
 
@@ -9,7 +9,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 
   svg {
     color: #1c3352;
@@ -20,7 +20,7 @@
 
 .rock-paper {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .choice {

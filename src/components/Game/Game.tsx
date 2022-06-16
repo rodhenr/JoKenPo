@@ -7,10 +7,8 @@ import { RootState } from "../../store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { increment } from "../../store/slices/scoreSlice";
 import {
-  changeSituation,
-  changePlayerChoice,
-  changeComputerChoice,
   showResults,
+  addRound,
 } from "../../store/slices/gameSlice";
 
 import "../../styles/Game.scss";
@@ -24,30 +22,28 @@ function Game() {
 
     const randChoice = (n: number) => {
       if (n === 1) {
-        return "rock";
+        return "pedra";
       } else if (n === 2) {
-        return "paper";
+        return "papel";
       } else {
-        return "scissors";
+        return "tesoura";
       }
     };
 
     const computerChoice = randChoice(rand);
 
     if (playerChoice === computerChoice) {
-      dispatch(changeSituation("Draw"));
+      dispatch(addRound({ playerChoice, computerChoice, situation: "empate" }));
     } else if (
-      (playerChoice === "rock" && computerChoice === "scissors") ||
-      (playerChoice === "scissors" && computerChoice === "paper") ||
-      (playerChoice === "paper" && computerChoice === "rock")
+      (playerChoice === "pedra" && computerChoice === "tesoura") ||
+      (playerChoice === "tesoura" && computerChoice === "papel") ||
+      (playerChoice === "papel" && computerChoice === "pedra")
     ) {
-      dispatch(changeSituation("Win"));
+      dispatch(addRound({ playerChoice, computerChoice, situation: "vitoria" }));
       dispatch(increment());
     } else {
-      dispatch(changeSituation("Lose"));
+      dispatch(addRound({ playerChoice, computerChoice, situation: "derrota" }));
     }
-    dispatch(changePlayerChoice(playerChoice));
-    dispatch(changeComputerChoice(computerChoice));
     dispatch(showResults(true));
   };
 
@@ -60,14 +56,14 @@ function Game() {
           <div className="rock-paper">
             <div
               onClick={() => {
-                play("rock");
+                play("pedra");
               }}
             >
               <Rock />
             </div>
             <div
               onClick={() => {
-                play("paper");
+                play("papel");
               }}
             >
               <Paper />
@@ -75,7 +71,7 @@ function Game() {
           </div>
           <div
             onClick={() => {
-              play("scissors");
+              play("tesoura");
             }}
           >
             <Scissors />

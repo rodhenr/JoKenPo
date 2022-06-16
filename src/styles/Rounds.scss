@@ -1,0 +1,59 @@
+.rounds-container {
+  border: 2px solid #5f708c;
+  height: 150px;
+  margin: 3rem 5%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.rounds {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+.round-title {
+  color: white;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  display: flex;
+}
+
+.round-rock {
+  p {
+    color: #5168f2;
+  }
+}
+.round-paper {
+  color: #efa214;
+}
+.round-scissors {
+  color: #d73753;
+}
+
+.rounds-player {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.rounds-computer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.rounds-situation {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    color: white;
+  }
+}

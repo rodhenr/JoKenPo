@@ -1,16 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface gameState {
-  situation: string;
+export interface roundState {
   playerChoice: string;
   computerChoice: string;
+  situation: string;
+}
+
+export interface gameState {
+  roundInfo: roundState[];
   showResult: boolean;
 }
 
 const initialState: gameState = {
-  situation: "",
-  playerChoice: "",
-  computerChoice: "",
+  roundInfo: [],
   showResult: false,
 };
 
@@ -18,14 +20,8 @@ export const gameSlice = createSlice({
   name: "game",
   initialState,
   reducers: {
-    changeSituation: (state, action: PayloadAction<string>) => {
-      state.situation = action.payload;
-    },
-    changePlayerChoice: (state, action: PayloadAction<string>) => {
-      state.playerChoice = action.payload;
-    },
-    changeComputerChoice: (state, action: PayloadAction<string>) => {
-      state.computerChoice = action.payload;
+    addRound: (state, action: PayloadAction<roundState>) => {
+      state.roundInfo.push(action.payload);
     },
     showResults: (state, action: PayloadAction<boolean>) => {
       state.showResult = action.payload;
@@ -34,7 +30,6 @@ export const gameSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { changeSituation, changePlayerChoice, changeComputerChoice, showResults } =
-  gameSlice.actions;
+export const { showResults, addRound } = gameSlice.actions;
 
 export default gameSlice.reducer;

@@ -1,6 +1,6 @@
 import Game from "./components/Game/Game";
-import Rules from "./components/Rules";
 import Score from "./components/Score";
+import Rounds from "./components/Rounds";
 import "./App.css";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div>
       <Score />
       <Game />
-      <Rules />
+      <Rounds />
     </div>
   );
 }

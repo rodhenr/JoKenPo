@@ -4,26 +4,22 @@ import Scissors from "./Scissors";
 
 import { RootState } from "../../store/store";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  changeSituation,
-  changePlayerChoice,
-  changeComputerChoice,
-  showResults,
-} from "../../store/slices/gameSlice";
+import { showResults } from "../../store/slices/gameSlice";
 
 import "../../styles/Result.scss";
 
 function Result() {
   const gameResult = useSelector((state: RootState) => state.game);
+  const roundInfo = gameResult.roundInfo;
   const dispatch = useDispatch();
 
   const getComponent = (name: string) => {
     switch (name) {
-      case "rock":
+      case "pedra":
         return <Rock />;
-      case "paper":
+      case "papel":
         return <Paper />;
-      case "scissors":
+      case "tesoura":
         return <Scissors />;
       default:
         break;
@@ -31,12 +27,12 @@ function Result() {
   };
 
   const situationResult = () => {
-    switch (gameResult.situation) {
-      case "Draw":
+    switch (roundInfo[roundInfo.length - 1].situation) {
+      case "empate":
         return "EMPATE!";
-      case "Win":
+      case "vitoria":
         return "VOCÊ VENCEU!";
-      case "Lose":
+      case "derrota":
         return "VOCÊ PERDEU!";
       default:
         break;
@@ -44,9 +40,6 @@ function Result() {
   };
 
   const handleNewGame = () => {
-    dispatch(changeSituation(""));
-    dispatch(changePlayerChoice(""));
-    dispatch(changeComputerChoice(""));
     dispatch(showResults(false));
   };
 
@@ -54,11 +47,11 @@ function Result() {
     <div className="result-container">
       <div className="result-choices">
         <div className="choice-player">
-          {getComponent(gameResult.playerChoice)}
+          {getComponent(roundInfo[roundInfo.length - 1].playerChoice)}
           <p>VOCÊ</p>
         </div>
         <div className="choice-computer">
-          {getComponent(gameResult.computerChoice)}
+          {getComponent(roundInfo[roundInfo.length - 1].computerChoice)}
           <p>COMPUTADOR</p>
         </div>
       </div>
