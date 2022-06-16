@@ -60,7 +60,7 @@ function Result() {
   return (
     <div className="result-container">
       <div className="result-choices">
-        <div className="choice-player winner">
+        <div className="choice-player winner" data-cy="result-player">
           {getComponent(lastRound.playerChoice)}
           <p>VOCÊ</p>
         </div>
@@ -73,14 +73,16 @@ function Result() {
                   : "result-info"
               }
             >
-              <p>{situationResult()}</p>
+              <p data-cy="result-message">{situationResult()}</p>
             </div>
             <div className="result-play">
-              <button onClick={() => handleNewGame()}>JOGAR NOVAMENTE</button>
+              <button onClick={() => handleNewGame()} data-cy="result-button">
+                JOGAR NOVAMENTE
+              </button>
             </div>
           </div>
         )}
-        <div className="choice-computer">
+        <div className="choice-computer" data-cy="result-computer">
           {getComponent(lastRound.computerChoice)}
           <p>COMPUTADOR</p>
         </div>
@@ -94,10 +96,12 @@ function Result() {
                 : "result-info"
             }
           >
-            <p>{situationResult()}</p>
+            <p data-cy="result-message">{situationResult()}</p>
           </div>
           <div className="result-play">
-            <button onClick={() => handleNewGame()}>JOGAR NOVAMENTE</button>
+            <button onClick={() => handleNewGame()} data-cy="result-button">
+              JOGAR NOVAMENTE
+            </button>
           </div>
         </div>
       )}

@@ -32,7 +32,7 @@ function Rounds() {
   return (
     <div className="rounds-container">
       <div className="rounds">
-        <div className="rounds-player">
+        <div className="rounds-player" data-cy="rounds">
           <p className="round-title">JOGADOR</p>
           {roundInfo
             .slice(0)

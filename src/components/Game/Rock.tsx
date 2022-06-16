@@ -5,7 +5,7 @@ import "../../styles/Game.scss";
 
 function Rock() {
   return (
-    <div className="choice choice-rock">
+    <div className="choice choice-rock" data-cy="rock">
       <FontAwesomeIcon icon={faHandBackFist} />
     </div>
   );

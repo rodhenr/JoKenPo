@@ -5,7 +5,7 @@ import "../../styles/Game.scss";
 
 function Scissors() {
   return (
-    <div className="choice choice-scissors">
+    <div className="choice choice-scissors" data-cy="scissors">
       <FontAwesomeIcon icon={faHandScissors} />
     </div>
   );

@@ -5,7 +5,7 @@ import "../../styles/Game.scss";
 
 function Paper() {
   return (
-    <div className="choice choice-paper">
+    <div className="choice choice-paper" data-cy="paper">
       <FontAwesomeIcon icon={faHand} />
     </div>
   );

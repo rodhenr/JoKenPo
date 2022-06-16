@@ -53,7 +53,7 @@ function Game() {
       {gameStore.showResult ? (
         <Result />
       ) : (
-        <div className="choice-container">
+        <div className="choice-container" data-cy="initial-game">
           <div className="rock-paper">
             <div
               onClick={() => {
