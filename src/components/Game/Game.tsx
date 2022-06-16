@@ -6,10 +6,7 @@ import Result from "./Result";
 import { RootState } from "../../store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { increment } from "../../store/slices/scoreSlice";
-import {
-  showResults,
-  addRound,
-} from "../../store/slices/gameSlice";
+import { showResults, addRound } from "../../store/slices/gameSlice";
 
 import "../../styles/Game.scss";
 
@@ -39,10 +36,14 @@ function Game() {
       (playerChoice === "tesoura" && computerChoice === "papel") ||
       (playerChoice === "papel" && computerChoice === "pedra")
     ) {
-      dispatch(addRound({ playerChoice, computerChoice, situation: "vitoria" }));
+      dispatch(
+        addRound({ playerChoice, computerChoice, situation: "vitoria" })
+      );
       dispatch(increment());
     } else {
-      dispatch(addRound({ playerChoice, computerChoice, situation: "derrota" }));
+      dispatch(
+        addRound({ playerChoice, computerChoice, situation: "derrota" })
+      );
     }
     dispatch(showResults(true));
   };

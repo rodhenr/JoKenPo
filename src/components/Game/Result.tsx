@@ -11,6 +11,7 @@ import "../../styles/Result.scss";
 function Result() {
   const gameResult = useSelector((state: RootState) => state.game);
   const roundInfo = gameResult.roundInfo;
+  const lastRound = roundInfo[roundInfo.length - 1];
   const dispatch = useDispatch();
 
   const getComponent = (name: string) => {
@@ -27,7 +28,7 @@ function Result() {
   };
 
   const situationResult = () => {
-    switch (roundInfo[roundInfo.length - 1].situation) {
+    switch (lastRound.situation) {
       case "empate":
         return "EMPATE!";
       case "vitoria":
@@ -46,16 +47,22 @@ function Result() {
   return (
     <div className="result-container">
       <div className="result-choices">
-        <div className="choice-player">
-          {getComponent(roundInfo[roundInfo.length - 1].playerChoice)}
+        <div className="choice-player winner">
+          {getComponent(lastRound.playerChoice)}
           <p>VOCÊ</p>
         </div>
         <div className="choice-computer">
-          {getComponent(roundInfo[roundInfo.length - 1].computerChoice)}
+          {getComponent(lastRound.computerChoice)}
           <p>COMPUTADOR</p>
         </div>
       </div>
-      <div className="result-info">
+      <div
+        className={
+          lastRound.situation === "vitoria"
+            ? "result-info winner"
+            : "result-info"
+        }
+      >
         <p>{situationResult()}</p>
       </div>
       <div className="result-play">

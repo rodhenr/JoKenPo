@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   height: 45vh;
-  margin-top: 4rem;
+  margin-top: 6rem;
 }
 
 .choice-container {
@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 0 1rem;
+  width: 100vw;
 
   svg {
     color: #1c3352;
@@ -20,7 +22,8 @@
 
 .rock-paper {
   display: flex;
-  gap: 3rem;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .choice {

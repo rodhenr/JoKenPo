@@ -7,8 +7,11 @@
 }
 
 .result-choices {
+  box-sizing: border-box;
   display: flex;
-  gap: 2.9rem;
+  justify-content: space-between;
+  padding: 0 1rem;
+  width: 100vw;
 
   svg {
     color: #1c3352;
@@ -51,6 +54,12 @@
     font-size: 2.5rem;
     font-weight: 600;
     margin: 0;
+  }
+}
+
+.result-info.winner {
+  p {
+    color: rgb(31, 133, 31);
   }
 }
 
