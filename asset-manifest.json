@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/jokenpo/static/css/main.00791adf.css",
+    "main.js": "/jokenpo/static/js/main.e701022f.js",
+    "static/js/787.df9823c3.chunk.js": "/jokenpo/static/js/787.df9823c3.chunk.js",
+    "index.html": "/jokenpo/index.html",
+    "main.00791adf.css.map": "/jokenpo/static/css/main.00791adf.css.map",
+    "main.e701022f.js.map": "/jokenpo/static/js/main.e701022f.js.map",
+    "787.df9823c3.chunk.js.map": "/jokenpo/static/js/787.df9823c3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00791adf.css",
+    "static/js/main.e701022f.js"
+  ]
+}
