@@ -1,4 +1,4 @@
-Esse é um projeto feito para simular uma Landing Page de uma empresa. As informações contidas na página podem não ser reais, sendo usadas apenas de forma didática para elaboração do site.
+Este é um projeto simples que simula um jogo de pedra, papel, tesoura.
 
 Para este projeto foram utilizadas as seguintes tecnologias:
 
