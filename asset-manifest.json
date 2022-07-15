@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jokenpo/static/css/main.00791adf.css",
-    "main.js": "/jokenpo/static/js/main.e701022f.js",
-    "static/js/787.df9823c3.chunk.js": "/jokenpo/static/js/787.df9823c3.chunk.js",
-    "index.html": "/jokenpo/index.html",
-    "main.00791adf.css.map": "/jokenpo/static/css/main.00791adf.css.map",
-    "main.e701022f.js.map": "/jokenpo/static/js/main.e701022f.js.map",
-    "787.df9823c3.chunk.js.map": "/jokenpo/static/js/787.df9823c3.chunk.js.map"
+    "main.css": "/JoKenPo/static/css/main.00791adf.css",
+    "main.js": "/JoKenPo/static/js/main.a990ee6b.js",
+    "static/js/787.df9823c3.chunk.js": "/JoKenPo/static/js/787.df9823c3.chunk.js",
+    "index.html": "/JoKenPo/index.html",
+    "main.00791adf.css.map": "/JoKenPo/static/css/main.00791adf.css.map",
+    "main.a990ee6b.js.map": "/JoKenPo/static/js/main.a990ee6b.js.map",
+    "787.df9823c3.chunk.js.map": "/JoKenPo/static/js/787.df9823c3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.00791adf.css",
-    "static/js/main.e701022f.js"
+    "static/js/main.a990ee6b.js"
   ]
 }
