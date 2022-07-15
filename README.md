@@ -3,7 +3,7 @@
 Um projeto simples que simula um jogo de pedra, papel, tesoura feito usando React e Typescript.
 
 <p align="center">
-<img alt="gif" src="https://media1.giphy.com/media/LjXssy6NPBPgti7glw/giphy.gif?cid=790b76119fa652ed8619e48593bbc4eef0c2f081a59c44bb&rid=giphy.gif&ct=g" />
+<img alt="gif" src="https://media4.giphy.com/media/SNmfdX6wg7o2lxhE4D/giphy.gif?cid=790b7611aeb267762b0235bd309bad79b27f8f74433e9c9f&rid=giphy.gif&ct=g" />
 </p>
 
 ## :man_technologist: Tecnologias
