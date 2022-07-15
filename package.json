@@ -1,7 +1,7 @@
 {
   "name": "jankenpo",
   "version": "0.1.0",
-  "homepage": "https://rodhenr.github.io/jokenpo/",
+  "homepage": "https://rodhenr.github.io/JoKenPo/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
